@@ -1,13 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import WelcomeBanner from '../components/WelcomeBanner.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const personalInfo = {
+	name: "Kristine",
+	title: "Aspiring Data Scientist",
+	skills: ["Python", "SQL", "Data Analysis", "Machine Learning"],
+	email: "kristine.abrina0@gmail.com",
+	linkedin: "https://www.linkedin.com/in/kristineabrina/",
+	github: "https://github.com/Kristine-Abrina",
+	location: "Quezon City, Philippines"
+};
 ---
 
-<Layout>
-	<main class="min-h-screen flex items-center justify-center">
-		<h1 class="text-4xl font-bold text-gray-900">Hello World!</h1>
+<Layout title="Kristine Abrina - Portfolio">
+	<main class="container mx-auto px-4 py-8">
+		<!-- Welcome Banner -->
+		<WelcomeBanner
+			name={personalInfo.name}
+			title={personalInfo.title}
+			skills={personalInfo.skills}
+			email={personalInfo.email}
+			linkedin={personalInfo.linkedin}
+			github={personalInfo.github}
+			location={personalInfo.location}
+		/>
+
+		<!-- About Section -->
+		<section class="mt-12">
+			<h2 class="text-2xl font-bold mb-4">Projects</h2>
+			<p class="text-gray-700 mb-4">
+				The following are some things I worked on and are currently working on:
+			</p>
+		</section>
 	</main>
 </Layout>
